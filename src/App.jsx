@@ -1,10 +1,11 @@
+import Ex1 from "./_Ex1/Ex1";
 
 
 
 function App() {
   return (
     <div>
-      <h1>Sa</h1>
+      <Ex1 />
     </div>
   );
 }
