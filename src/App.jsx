@@ -1,12 +1,13 @@
 import Ex1 from "./_Ex1/Ex1";
-
+import Glasses from "./_ExGlasses/Glasses";
 
 
 function App() {
   return (
-    <div>
-      <Ex1 />
-    </div>
+    
+      //<Ex1 />
+      <Glasses />
+    
   );
 }
 
