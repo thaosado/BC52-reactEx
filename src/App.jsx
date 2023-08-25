@@ -1,11 +1,13 @@
-import Glasses from "./_ExGlasses/Glasses";
+import ShoeShop from "./Ex_ShoeShop/ShoeShop";
+
 
 
 function App() {
   return (
     
       //<Ex1 />
-      <Glasses />
+      // <Glasses />
+      <ShoeShop />
     
   );
 }
