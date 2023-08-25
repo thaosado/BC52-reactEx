@@ -52,9 +52,7 @@ export default function ShoeShop() {
       }
       return item;
     });
-
-    setCarts(newCarts)
-    
+    setCarts(newCarts.filter(item => item.quantity != 0))
   }
 
   //Hàm xóa sản phẩm
