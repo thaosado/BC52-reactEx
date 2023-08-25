@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ShoesCart({carts, onCloseCart, onChangeQuantity, onDeleteProduct, onClickToPay}) {
+export default function ShoesCart({carts, onCloseCart, onChangeQuantity, onDeleteProduct, onClickToPay, totalPrice}) {
     return (
         <div>
             <div className="modal" style={{display: "block"}} tabIndex={-1}>
@@ -38,6 +38,7 @@ export default function ShoesCart({carts, onCloseCart, onChangeQuantity, onDelet
                                     })}
                                 </tbody>
                             </table>
+                            <p className='text-end m-3 mb-0'>Tổng tiền: ${totalPrice}</p>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={onCloseCart}>Close</button>

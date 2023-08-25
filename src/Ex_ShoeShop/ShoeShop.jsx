@@ -16,6 +16,9 @@ export default function ShoeShop() {
   const totalProduct = carts.reduce((result, item) => {
     return result + item.quantity
   },0)
+  const totalPrice = carts.reduce((result, item) => {
+    return result + (item.quantity * item.price)
+  }, 0)
 
   //Hàm show thông tin sản phẩm
   const handleShowDetail = (product) => {
@@ -49,8 +52,9 @@ export default function ShoeShop() {
       }
       return item;
     });
-    
+
     setCarts(newCarts)
+    
   }
 
   //Hàm xóa sản phẩm
@@ -84,7 +88,7 @@ export default function ShoeShop() {
 
       <ShoeList products={data} onShowDetail={handleShowDetail} onAddToCart={handleAddToCart} />
       {isOpenDetail && <DetailItem onAddToCart={handleAddToCart} product={selectProduct} onCloseDetail={handleCloseDetail} />}
-      {isOpenCart && <ShoesCart carts={carts} onCloseCart={handleCloseCart} onChangeQuantity = {handleChangeQuantity} onDeleteProduct={handleDeleteProduct} onClickToPay = {handleClickToPay} />}
+      {isOpenCart && <ShoesCart carts={carts} onCloseCart={handleCloseCart} onChangeQuantity = {handleChangeQuantity} onDeleteProduct={handleDeleteProduct} onClickToPay = {handleClickToPay} totalPrice={totalPrice} />}
     </div>
   )
 }
