@@ -1,3 +1,4 @@
+import MovieTickets from "./Ex-DatVe/MovieTickets";
 import ShoeShop from "./Ex_ShoeShop/ShoeShop";
 
 
@@ -7,7 +8,8 @@ function App() {
     
       //<Ex1 />
       // <Glasses />
-      <ShoeShop />
+      // <ShoeShop />
+      <MovieTickets />
     
   );
 }
