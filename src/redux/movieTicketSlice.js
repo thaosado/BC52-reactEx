@@ -8,7 +8,6 @@ const movieTicketSlice = createSlice({
             numberOfSeat: null,
         },
         selectedSeats: [],
-        totalPrice: 0,
         disabled: {
             formInfor: false,
             checkBox: true,
@@ -25,12 +24,10 @@ const movieTicketSlice = createSlice({
             const {isSelected, ...seat} = action.payload;
             if(isSelected){
                 state.selectedSeats.push(seat);
-                state.totalPrice += seat.gia;
             }
             else{
                 const index = state.selectedSeats.findIndex((item) => item.soGhe === seat.soGhe);
                 state.selectedSeats.splice(index, 1);
-                state.totalPrice -= seat.price;   
             }
             if(state.infor.numberOfSeat === state.selectedSeats.length){
                 state.disabled.checkBox = true;
