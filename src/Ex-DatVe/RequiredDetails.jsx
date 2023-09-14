@@ -40,7 +40,9 @@ export default function RequiredDetails() {
         value={infor.numberOfSeat}
         onChange={handleChange} />
 
-        <button className='mt-5 btn btn-light' onClick={()=>handleStartSelecting(infor.name, infor.numberOfSeat)}>Start Selecting</button>
+        <button className='mt-5 btn btn-light' 
+        disabled={disabled.formInfor}
+        onClick={()=>handleStartSelecting(infor.name, infor.numberOfSeat)}>Start Selecting</button>
 
         <div>
             <ul>

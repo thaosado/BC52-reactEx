@@ -21,7 +21,7 @@
     {
       "hang": "A", 
       "danhSachGhe": [
-        {"soGhe":"A1","gia":75000,"daDat":false},
+        {"soGhe":"A1","gia":75000,"daDat":true},
         {"soGhe":"A2","gia":75000,"daDat":false},
         {"soGhe":"A3","gia":75000,"daDat":false},
         {"soGhe":"A4","gia":75000,"daDat":false},

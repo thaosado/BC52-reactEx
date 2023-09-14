@@ -8,12 +8,15 @@ import {startSelect} from "../redux/movieTicketSlice"
 
 export default function SeatList({ data }) {
     const [isConfirm, setIsConfirm] = useState(false)
-    const { disabled, selectedSeats } = useSelector((state) => {
+    const { disabled, selectedSeats, infor } = useSelector((state) => {
         return state.movieTickets
     })
     const dispatch = useDispatch();
 
     const handleConfirmSelection = () => {
+        if(selectedSeats.length === 0 || selectedSeats.length < infor.numberOfSeat){
+            return alert ("Please Select your Seats NOW!")
+        }
         setIsConfirm(true);
         dispatch(startSelect({formInfor: true, checkBox: true}));
     }
@@ -44,6 +47,7 @@ export default function SeatList({ data }) {
             })} </h6>
 
             <button className='btn btn-light my-3'
+                disabled={disabled.checkBox}
                 onClick={handleConfirmSelection}>Confirm Selection</button>
 
             <div>
