@@ -62,11 +62,7 @@ li{
     background-color: #fff;
     box-shadow: inset 0px 2px 3px 0px rgb(255, 152, 0), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 }
-.boxEmpty::before{
-    background-color: #fff;
-    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
-    
-}
+
 tr{
     text-align: center;
 }
@@ -89,17 +85,6 @@ input[type=checkbox]{
     position: relative;
 }
 
-.checkBox::before{
-    position: absolute;
-    top: -7px;
-    content: "";
-    width: 30px;
-    height: 25px;
-    border: 3px solid #ff9800;
-    display: inline-block;
-    border-radius: 5px;
-    
-}
 .select{
     margin-left: 45px;
     margin-top: 10px;
