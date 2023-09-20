@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSeat } from "../redux/movieTicketSlice";
 import { css } from '@emotion/css';
@@ -15,6 +15,7 @@ export default function SeatItem({ seats }) {
         if (selectedSeats.length + 1 <= +infor.numberOfSeat || isSelected) {
             dispatch(selectSeat({ ...seat, isSelected: !isSelected }))
         }
+        
     }
 
 
@@ -24,19 +25,21 @@ export default function SeatItem({ seats }) {
                 const isSelected = selectedSeats.find((item) => item.soGhe === seat.soGhe)
                 if (seats.hang && seat.soGhe) {
                     let color = "white";
+                    let disable = false;
                     if (isSelected) {
                         color = "green"
                     }
                     if (seat.daDat) {
-                        color = "red"
+                        color = "red";
+                        disable = true;
                     }
                     return (
                         <td key={seat.soGhe}><input type="checkbox"
-                            disabled={disabled.checkBox}
+                            disabled={disable}
                             value={seat.soGhe}
                             onClick={() => handleCheckBox(seat, !!isSelected)}
                             className={css`
-                                    &::before{
+                                    &::before{ 
                                         position: absolute;
                                         top: -7px;
                                         content: "";
